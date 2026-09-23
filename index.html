@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Silicon vs Synapses</title>
+  <script type="module" crossorigin src="./assets/index-BRi_yFL8.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bw73gTo1.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <canvas id="figure"></canvas>
+
+  <div id="overlay">
+    <div id="labels"></div>
+
+    <div class="pane" data-pane="title">
+      <div class="titleplates">
+        <div class="si" style="background-image:url(img/g-title-silicon.jpg)"></div>
+        <div class="sy" style="background-image:url(img/g-title-synapses.jpg)"></div>
+      </div>
+      <div class="kicker">Université Toulouse III · Paul Sabatier</div>
+      <h1 class="split-title"><span class="si">SILICON</span><span class="vs">vs</span><span class="sy">SYNAPSES</span></h1>
+      <div class="authors" id="authors">Dominique &nbsp;·&nbsp; Willy</div>
+    </div>
+
+    <div class="pane" data-pane="question">
+      <h2>Inspired by biology.<br><em>Not a copy of it.</em></h2>
+    </div>
+
+    <div class="pane" data-pane="brain">
+      <div class="stat"><span class="num" id="neuronCount">0</span><span class="unit">neurons</span></div>
+      <h3 class="corner">The biological original</h3>
+    </div>
+
+    <div class="pane" data-pane="inside">
+      <h3 class="corner">Inside the scan</h3>
+      <div class="scanmeta">
+        <span>ICBM152 · T1 MRI · 207 × 256 × 215</span>
+        <span>0.737 mm isotropic</span>
+        <span class="src">Montreal Neurological Institute</span>
+        <span id="cutPlane">sagittal section</span>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="deepdive">
+      <div class="dive">
+        <div class="dive-layer l1" style="background-image:url(img/g-histo-section.jpg)"></div>
+        <div class="dive-layer l2" style="background-image:url(img/g-histo-cerebellum.jpg)"></div>
+        <div class="dive-layer l3" style="background-image:url(img/g-neurons-dive.jpg)"></div>
+      </div>
+      <div class="diveHud">
+        <div class="scalebar"><i></i><span id="scaleVal">150 mm</span></div>
+        <div class="divetech" id="diveTech">Cell-body stain · 20 µm per pixel</div>
+      </div>
+      <h3 class="corner">Into the tissue</h3>
+      <div class="photocredit">BigBrain · Amunts et al. 2013 · CC BY-NC-SA 4.0</div>
+    </div>
+
+    <div class="pane" data-pane="neuron">
+      <div class="split">
+        <div class="scol">
+          <h3 class="stitle">One cell.<br>One switch.</h3>
+          <ul class="callouts">
+            <li><b>Dendrites</b><span>the branched input tree, thousands of contacts per cell</span></li>
+            <li><b>Soma</b><span>the cell body, where incoming signals are summed</span></li>
+            <li><b>Axon</b><span>a single output line, up to a metre long</span></li>
+            <li><b>Synapse</b><span>the gap the signal crosses chemically, never by contact</span></li>
+          </ul>
+          <p class="caption">Purkinje neurons of the cerebellum.<br>Golgi silver impregnation, light micrograph.</p>
+        </div>
+        <figure class="photo-panel warmshot">
+          <div class="photo" style="background-image:url(img/g-neurons-golgi.jpg)"></div>
+          <figcaption>Lennart Rikk · CC0 · Wikimedia Commons</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="plasticity">
+      <div class="photo halfright warmshot" style="background-image:url(img/g-ltp-spines.jpg)"></div>
+      <div class="photocredit">Dendritic spines during long-term potentiation · CC BY-SA 3.0</div>
+      <h3 class="corner">Neuroplasticity</h3>
+      <div class="factbox">
+        <p>Learning is not a metaphor here.<br>The connections physically change.</p>
+        <span>Dendritic spines imaged over hours during long-term potentiation.<br>New spines appear, some stabilise, others are lost.</span>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="ann">
+      <h3 class="corner">A real network, running</h3>
+    </div>
+
+    <div class="pane" data-pane="backprop">
+      <h3 class="corner">Learning, live</h3>
+    </div>
+
+    <div class="pane" data-pane="similar">
+      <h3 class="corner">Both learn from examples</h3>
+      <p class="thesis">You read all four of these in a second.<br>
+        It saw sixty thousand digits, and still missed them.</p>
+    </div>
+
+    <div class="pane" data-pane="power">
+      <div class="photo halfright coolshot" style="background-image:url(img/g-datacenter.jpg)"></div>
+      <div class="photocredit">CERN Data Centre · SimonWaldherr · CC BY-SA 4.0</div>
+      <div class="duo">
+        <div class="side warm"><div class="side-t">Human brain</div><div class="big" id="wBrain">20 W</div><div class="side-n">locked</div></div>
+        <div class="side cool"><div class="side-t">Training a large model</div><div class="big" id="wAI">0 W</div><div class="side-n" id="racks">0 racks</div></div>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="data">
+      <div class="duo">
+        <div class="side warm"><div class="side-t">To learn “cat”</div><div class="big" id="catL">1</div><div class="side-n">example</div></div>
+        <div class="side cool"><div class="side-t">To learn “cat”</div><div class="big" id="catR">0</div><div class="side-n">examples</div></div>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="gap">
+      <div class="split rev">
+        <figure class="photo-panel warmshot">
+          <div class="photo" style="background-image:url(img/g-oracle-bone.jpg)"></div>
+          <figcaption>Oracle bone inscription · Shang dynasty · CC0</figcaption>
+        </figure>
+        <div class="scol">
+          <h3 class="stitle">You can see every symbol.<br>You cannot read one.</h3>
+          <div class="sentence" id="sentence"></div>
+          <div class="cols2">
+            <div class="col full"><div class="col-t">SYNTAX</div><div class="col-s">the rules that order the symbols</div></div>
+            <div class="col empty"><div class="col-t">SEMANTICS</div><div class="col-s">what any of it means</div></div>
+          </div>
+          <p class="caption">A language model predicts the next token from statistics alone.<br>The probabilities above are what it works with. Nothing else.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane" data-pane="chip">
+      <div class="duoshot">
+        <figure class="half coolshot">
+          <div class="photo" style="background-image:url(img/g-die-silicon.jpg)"></div>
+          <figcaption><b>SILICON</b> integrated circuit die · metal interconnect and memory array<br>
+            <span>AMD 9101B · photomicrograph at 120 nm per pixel · CC BY-SA 4.0</span></figcaption>
+        </figure>
+        <figure class="half warmshot">
+          <div class="photo" style="background-image:url(img/g-neurons-golgi-w.jpg)"></div>
+          <figcaption><b>SYNAPSES</b> cerebellar cortex · dendritic arbour and cell bodies<br>
+            <span>Golgi silver impregnation · Lennart Rikk · CC0</span></figcaption>
+        </figure>
+      </div>
+      <h3 class="corner">Neuromorphic engineering</h3>
+      <p class="thesis">Computing is turning back to biology for its blueprint.</p>
+    </div>
+
+    <div class="pane" data-pane="chipmorph">
+      <h3 class="corner">Neuromorphic engineering</h3>
+      <div class="morphlabel" id="chipLabel">SILICON</div>
+    </div>
+
+    <div class="pane" data-pane="summary">
+      <ol class="takeaways">
+        <li>Inspired by biology, not a biological brain.</li>
+        <li>Both find patterns. Only one understands.</li>
+        <li>The 20&nbsp;watt marvel still gives it meaning.</li>
+      </ol>
+    </div>
+
+    <div class="pane" data-pane="questions">
+      <h1 class="thanks">Thank you</h1>
+      <div class="authors">Questions &amp; discussion</div>
+    </div>
+
+    <div class="pane" data-pane="sources">
+      <h3 class="corner">Sources</h3>
+      <ul class="sources" id="sourceList"></ul>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div id="mic" class="mic"><span class="dot"></span><span class="mtext">voice off</span></div>
+    <div id="heard"></div>
+  </div>
+  <div id="notice"></div>
+
+  <div id="vtest" class="hidden">
+    <h4>Microphone check</h4>
+    <table id="vtestTable"></table>
+    <div class="level"><i id="vlevel"></i></div>
+    <div class="vheard" id="vheard">say anything</div>
+    <p class="hint">T closes this · V turns the voice on and off</p>
+  </div>
+
+  <div id="help" class="hidden">
+    <h4>Every slide, and how to reach it</h4>
+    <table id="helpTable"></table>
+    <p class="hint">H closes this · V voice · T microphone check · R half resolution · F fullscreen · S sources · ← → move between slides · space opens the sub-slides</p>
+  </div>
+
+</body>
+</html>
